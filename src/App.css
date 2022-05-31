@@ -1,0 +1,13 @@
+.container {
+  margin: auto;
+  width: 900px;
+  column-count: 3;
+}
+
+.card {
+  margin-bottom: 16px;
+}
+
+img {
+  width: 290px;
+}
