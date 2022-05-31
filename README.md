@@ -2,4 +2,4 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-qomdq7)
+[View on StackBlitz ⚡️](https://stackblitz.com/edit/react-qomdq7)
