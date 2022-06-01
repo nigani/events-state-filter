@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 
 class ProjectList extends React.Component {
   render() {
@@ -8,9 +9,7 @@ class ProjectList extends React.Component {
     return (
       <div className="container">
         {projects.map((project) => (
-          <div className="card">
-            <img src={project.img} alt={project.category} />
-          </div>
+            <img className="card" key={nanoid()} src={project.img} alt={project.category} />
         ))}
       </div>
     );
@@ -18,7 +17,7 @@ class ProjectList extends React.Component {
 }
 
 ProjectList.propTypes = {
-  projects: PropTypes.object,
+  projects: PropTypes.array,
 };
 
 export default ProjectList;
