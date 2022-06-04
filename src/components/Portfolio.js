@@ -6,8 +6,13 @@ import Toolbar from './Toolbar.js';
 import PropTypes from 'prop-types';
 
 class Portfolio extends React.Component {
-  constructor(props) {
-    const allProjects = [
+
+  static propTypes = { };
+
+  state = {
+    filters: ['All', 'Websites', 'Flayers', 'Business Cards'],
+    selected: 'All',
+    projects: [
       {
         img: 'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg',
         category: 'Business Cards',
@@ -76,14 +81,8 @@ class Portfolio extends React.Component {
         img: 'https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_3.png',
         category: 'Flayers',
       },
-    ];
-    super(props);
-    this.state = {
-      filters: ['All', 'Websites', 'Flayers', 'Business Cards'],
-      selected: 'All',
-      projects: allProjects,
-    };
-  }
+    ],
+  };
 
   render() {
     const { filters, selected, projects } = this.state;
@@ -96,16 +95,15 @@ class Portfolio extends React.Component {
         />
         <ProjectList
           projects={
-            selected == 'All' ? projects : projects.filter((e) => e.category == selected)
+            selected == 'All'
+              ? projects
+              : projects.filter((e) => e.category == selected)
           }
         />
+        {performance.now()}
       </>
     );
   }
 }
-
-Portfolio.propTypes = {
-  item: PropTypes.object,
-};
 
 export default Portfolio;

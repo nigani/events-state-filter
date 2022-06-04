@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Toolbar extends React.Component {
+  
+  static propTypes = {
+    filters: PropTypes.array.isRequired,
+    selected: PropTypes.string.isRequired,
+    onSelectFilter: PropTypes.func.isRequired,
+  }
+
   render() {
     const { filters, selected, onSelectFilter } = this.props;
     return (
@@ -15,11 +22,5 @@ class Toolbar extends React.Component {
     );
   }
 }
-
-Toolbar.propTypes = {
-  filters: PropTypes.array,
-  selected: PropTypes.string,
-  onSelectFilter: PropTypes.func,
-};
 
 export default Toolbar;
